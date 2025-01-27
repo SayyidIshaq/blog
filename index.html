@@ -18,7 +18,12 @@
 <body>
     <h1>TWS</h1>
     <div id="CSVTable"></div>
-    
+    <script>
+        
+$(document).ready(function() {
+    $('#CSVTable').CSVToTable('username.csv');
+  });
+    </script>
      
 </body>
 <script defer src="./main.js"></script>
