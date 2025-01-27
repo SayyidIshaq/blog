@@ -9,19 +9,24 @@
 
 <body>
   {% include nav.html %}
-  <div class="container">
-    <div class="page-header">
-      {{content}}
-    </div>
 
-    <div class="page-footer">
+  <table>
+  {% for row in site.data.authors %}
+    {% if forloop.first %}
+    <tr>
+      {% for pair in row %}
+        <th>{{ pair[0] }}</th>
+      {% endfor %}
+    </tr>
+    {% endif %}
 
-
-      <div class="jumbotron">
+    {% tablerow pair in row %}
+      {{ pair[1] }}
+    {% endtablerow %}
+  {% endfor %}
+</table>
+  
         {%include footer.html %}
-      </div>
-    </div>
-  </div>
 
 </body>
 
